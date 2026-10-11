@@ -33,3 +33,4 @@ D:\_SEMidTermProject\ChurchOrganizationSystem\bin\Debug\net8.0\Microsoft.Extensi
 D:\_SEMidTermProject\ChurchOrganizationSystem\bin\Debug\net8.0\MySqlConnector.dll
 D:\_SEMidTermProject\ChurchOrganizationSystem\obj\Debug\net8.0\ChurchOrganizationSystem.csproj.AssemblyReference.cache
 D:\_SEMidTermProject\ChurchOrganizationSystem\obj\Debug\net8.0\ChurchOr.4E045675.Up2Date
+D:\_SEMidTermProject\ChurchOrganizationSystem\obj\Debug\net8.0\ChurchOrganizationSystem.sourcelink.json

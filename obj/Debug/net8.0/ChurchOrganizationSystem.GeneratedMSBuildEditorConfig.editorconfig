@@ -18,8 +18,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\_SEMidTermProject\ChurchOrganizationSystem
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/_SEMidTermProject/ChurchOrganizationSystem/Pages/Categories/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/_SEMidTermProject/ChurchOrganizationSystem/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/_SEMidTermProject/ChurchOrganizationSystem/Pages/Groups/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR3JvdXBzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/_SEMidTermProject/ChurchOrganizationSystem/Pages/Index.cshtml]
