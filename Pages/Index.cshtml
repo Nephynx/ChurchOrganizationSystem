@@ -1,0 +1,50 @@
+﻿
+@page
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="text-center mb-4">
+    <h1>Church/Organization Management System</h1>
+    <p class="text-muted">
+        Manage members, activities, and attendance in one place.
+    </p>
+</div>
+
+<div class="row g-3">
+    <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+                <h5>Members</h5>
+                <p>Register and manage organization members.</p>
+                <a href="/Members" class="btn btn-primary">
+                    Manage Members
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+                <h5>Activities</h5>
+                <p>Create and manage scheduled activities.</p>
+                <button class="btn btn-secondary" disabled>
+                    Coming Soon
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+                <h5>Attendance</h5>
+                <p>Record and review member attendance.</p>
+                <button class="btn btn-secondary" disabled>
+                    Coming Soon
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,112 @@
+
+@page
+@model ChurchOrganizationSystem.Pages.Members.IndexModel
+
+@{
+    ViewData["Title"] = "Members";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h1>Members</h1>
+        <p class="text-muted">View and register organization members.</p>
+    </div>
+
+    <div class="d-flex gap-2">
+        <a asp-page="/Members/Create" class="btn btn-primary">
+            Register Member
+        </a>
+        <a asp-page="/Index" class="btn btn-outline-secondary">
+            Back to Dashboard
+        </a>
+    </div>
+</div>
+
+
+@if (Model.ErrorMessage != null)
+{
+    <div class="alert alert-danger">
+        @Model.ErrorMessage
+    </div>
+}
+else
+{
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <p>
+                Total members:
+                <strong>@Model.Members.Count</strong>
+            </p>
+
+
+<form method="get" class="row g-2 mb-3">
+    <div class="col-md-9">
+        <input type="text"
+               name="SearchTerm"
+               value="@Model.SearchTerm"
+               class="form-control"
+               placeholder="Search by member number or name." />
+    </div>
+
+                <div class="col-md-3 d-flex gap-2">
+                    <button type="submit" class="btn btn-primary">
+                        Search
+                    </button>
+
+                    <a asp-page="/Members/Index"
+                    class="btn btn-outline-secondary">
+                        Clear
+                    </a>
+                </div>
+            </form>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Member No.</th>
+                            <th>Name</th>
+                            <th>Contact</th>
+                            <th>Email</th>
+                            <th>Date Joined</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var member in Model.Members)
+                        {
+                            <tr>
+                                <td>@member.MembershipNumber</td>
+                                <td>
+                                    @member.FirstName
+                                    @if (!string.IsNullOrWhiteSpace(member.MiddleName))
+                                    {
+                                        <text> @member.MiddleName</text>
+                                    }
+                                    @member.LastName
+                                </td>
+                                <td>@(member.ContactNumber ?? "—")</td>
+                                <td>@(member.Email ?? "—")</td>
+                                <td>@member.DateJoined.ToString("yyyy-MM-dd")</td>
+                                <td>@member.MembershipStatus</td>
+                                <td>
+                                    <a asp-page="/Members/Details"
+                                       asp-route-id="@member.MemberId"
+                                       class="btn btn-sm btn-outline-primary">
+                                        View Profile
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            @if (Model.Members.Count == 0)
+            {
+                <p class="text-muted">No members have been registered yet.</p>
+            }
+        </div>
+    </div>
+}

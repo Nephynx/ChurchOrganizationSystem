@@ -1,0 +1,59 @@
+@page "{id:int}"
+@model ChurchOrganizationSystem.Pages.Members.DetailsModel
+
+@{
+    ViewData["Title"] = "Member Profile";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Member Profile</h1>
+    <a asp-page="/Members/Index" class="btn btn-outline-secondary">
+        Back to Members
+    </a>
+</div>
+
+@if (Model.Member is not null)
+{
+    <div class="card shadow-sm">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <strong>@Model.Member.FirstName @Model.Member.LastName</strong>
+            <span class="badge @(Model.Member.MembershipStatus == "Active" ? "bg-success" : "bg-secondary")">
+                @Model.Member.MembershipStatus
+            </span>
+        </div>
+
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-4">Membership Number</dt>
+                <dd class="col-sm-8">@Model.Member.MembershipNumber</dd>
+
+                <dt class="col-sm-4">First Name</dt>
+                <dd class="col-sm-8">@Model.Member.FirstName</dd>
+
+                <dt class="col-sm-4">Middle Name</dt>
+                <dd class="col-sm-8">@(Model.Member.MiddleName ?? "—")</dd>
+
+                <dt class="col-sm-4">Last Name</dt>
+                <dd class="col-sm-8">@Model.Member.LastName</dd>
+
+                <dt class="col-sm-4">Contact Number</dt>
+                <dd class="col-sm-8">@(Model.Member.ContactNumber ?? "—")</dd>
+
+                <dt class="col-sm-4">Email</dt>
+                <dd class="col-sm-8">@(Model.Member.Email ?? "—")</dd>
+
+                <dt class="col-sm-4">Address</dt>
+                <dd class="col-sm-8">@(Model.Member.Address ?? "—")</dd>
+
+                <dt class="col-sm-4">Date Joined</dt>
+                <dd class="col-sm-8">@Model.Member.DateJoined.ToString("MMMM dd, yyyy")</dd>
+            </dl>
+        </div>
+    </div>
+
+    <a asp-page="/Members/Edit"
+       asp-route-id="@Model.Member.MemberId"
+       class="btn btn-primary">
+        Edit Member
+    </a>
+}

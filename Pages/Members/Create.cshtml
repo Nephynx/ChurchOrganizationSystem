@@ -1,0 +1,114 @@
+
+@page
+@model ChurchOrganizationSystem.Pages.Members.CreateModel
+
+@{
+    ViewData["Title"] = "Register Member";
+}
+
+<h1>Register Member</h1>
+<p class="text-muted">Enter the member's information below.</p>
+
+@if (Model.ErrorMessage != null)
+{
+    <div class="alert alert-danger">@Model.ErrorMessage</div>
+}
+
+<div asp-validation-summary="ModelOnly"
+     class="text-danger mb-3"></div>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <form method="post">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label asp-for="Member.MembershipNumber"
+                           class="form-label"></label>
+                    <input asp-for="Member.MembershipNumber"
+                           class="form-control" />
+                    <span asp-validation-for="Member.MembershipNumber"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6">
+                    <label asp-for="Member.DateJoined"
+                           class="form-label"></label>
+                    <input asp-for="Member.DateJoined" type="date"
+                           class="form-control" />
+                    <span asp-validation-for="Member.DateJoined"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="col-md-4">
+                    <label asp-for="Member.FirstName"
+                           class="form-label"></label>
+                    <input asp-for="Member.FirstName"
+                           class="form-control" />
+                    <span asp-validation-for="Member.FirstName"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="col-md-4">
+                    <label asp-for="Member.MiddleName"
+                           class="form-label"></label>
+                    <input asp-for="Member.MiddleName"
+                           class="form-control" />
+                </div>
+
+                <div class="col-md-4">
+                    <label asp-for="Member.LastName"
+                           class="form-label"></label>
+                    <input asp-for="Member.LastName"
+                           class="form-control" />
+                    <span asp-validation-for="Member.LastName"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6">
+                    <label asp-for="Member.ContactNumber"
+                           class="form-label"></label>
+                    <input asp-for="Member.ContactNumber"
+                           class="form-control" />
+                </div>
+
+                <div class="col-md-6">
+                    <label asp-for="Member.Email"
+                           class="form-label"></label>
+                    <input asp-for="Member.Email"
+                           type="email" class="form-control" />
+                    <span asp-validation-for="Member.Email"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="col-md-8">
+                    <label asp-for="Member.Address"
+                           class="form-label"></label>
+                    <input asp-for="Member.Address"
+                           class="form-control" />
+                </div>
+
+                <div class="col-md-4">
+                    <label asp-for="Member.MembershipStatus"
+                           class="form-label"></label>
+                    <select asp-for="Member.MembershipStatus"
+                            class="form-select">
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+                    <span asp-validation-for="Member.MembershipStatus"
+                          class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="mt-4 d-flex gap-2">
+                <button type="submit" class="btn btn-primary">
+                    Save Member
+                </button>
+                <a asp-page="/Members/Index"
+                   class="btn btn-outline-secondary">
+                    Cancel
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
